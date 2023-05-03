@@ -1,18 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import posts from './assets/data/posts.json'
-import { StyleSheet,  SafeAreaView } from 'react-native';
+import user from './assets/data/user.json'
+import { StyleSheet,  SafeAreaView , View, Image, Text} from 'react-native';
 import Header from './components/Header';
+import BodyPost from './components/Body';
 
 
 
 export default function App() {
-  let post = posts[0]
+  let post = user.posts[0]
+  
   return (
     <SafeAreaView style={styles.container}>
         {/* header */}
         <Header />
         {/* body */}
-
+        <BodyPost />
         {/* footer */}
    
     <StatusBar />
@@ -27,4 +30,15 @@ const styles = StyleSheet.create({
     padding: 20,
     marginTop: 50,
   },
+  bodyContainer: {
+    marginTop: 20,
+  },
+  description: {
+    lineHeight: 20,
+    padding: 10,
+  },
+  image: {
+    width: '100%',
+    aspectRatio: 1
+  }
 });
