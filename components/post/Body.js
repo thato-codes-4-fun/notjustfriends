@@ -1,18 +1,16 @@
-import { StyleSheet,  SafeAreaView , View, Image, Text} from 'react-native';
-import user from '../assets/data/user.json'
+import { StyleSheet,  View, Image, Text} from 'react-native';
 
-export default function BodyPost() {
-    let post = user.posts[0]
+export default function BodyPost({description, image}) {
     return (
         <View style={styles.bodyContainer}>
-            <Text style={styles.description}>{post.description}</Text>
+            <Text style={styles.description}>{description}</Text>
             {
-            post.image
+            image
             && 
             <Image
             style={styles.image}
             source={{
-                uri: post.image,
+                uri: image,
             }}
             />
             }

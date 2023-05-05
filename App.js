@@ -1,10 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import posts from './assets/data/posts.json'
 import user from './assets/data/user.json'
-import { StyleSheet,  SafeAreaView , View, Image, Text} from 'react-native';
-import Header from './components/Header';
-import BodyPost from './components/Body';
-import Footer from './components/Footer';
+import { StyleSheet,  SafeAreaView ,} from 'react-native';
+import PostScreen from './screens/post';
 
 
 
@@ -13,12 +10,7 @@ export default function App() {
   
   return (
     <SafeAreaView style={styles.container}>
-        {/* header */}
-        <Header />
-        {/* body */}
-        <BodyPost />
-        {/* footer */}
-        <Footer/>
+      <PostScreen post={post}/>
     <StatusBar />
     </SafeAreaView>
   );

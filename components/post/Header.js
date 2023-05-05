@@ -1,23 +1,21 @@
-import { StyleSheet, Text, View, SafeAreaView , Image} from 'react-native';
-import posts from '../assets/data/posts.json'
+import { StyleSheet, Text, View, Image} from 'react-native';
 import { Entypo } from '@expo/vector-icons'; 
 
 
-export default function Header() {
-    let post = posts[1]
+export default function Header({name, image, createdAt}) {
     return (
         <View style={styles.headerContainer}>
         <View style={styles.leftHeader}>
         <Image
             style={styles.image}
             source={{
-              uri: post.User.image,
+              uri: image,
 
             }}
           />
           <View style={styles.row}>
-            <Text style={styles.name}>{post.User.name}</Text>
-            <Text style={styles.createdAt}>{post.createdAt}</Text>
+            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.createdAt}>{createdAt}</Text>
           </View>
         </View>
         <View style={styles.rightHeader}>
